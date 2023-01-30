@@ -1,0 +1,207 @@
+{
+  "$id": "https://example.com/product.schema.json",
+  "title": "urban_survey",
+  "description": "Urban Survey Description ITCC",
+  "type": "object",
+  "properties": {
+    "first_name_bs": {
+      "description": "no",
+      "type": "string"
+    },
+    "middle_initial_bs": {
+      "description": "no",
+      "type": "string"
+    },
+    "last_name_bs": {
+      "description": "no",
+      "type": "string"
+    },
+    "college_bs": {
+      "type": "string",
+      "pattern": "^15098701$|01201500$|00269100$|00991700$|00269400$|01005100$|00726600$|00208900$|00269700$|00970400$|00970600$|00378700$"
+    },
+    "micro_pathway_program_bs": {
+      "description": " 01.Cloud Computing 02.Software Engineering 03.Business Office Technology (Administrative Assistant) 04.Computer Network Support Specialist 05.Certified Production Technician 06.EMT 07.Automotive Technology 08.Automated Industrial Technology 09.Building + Construction Trades (Specialties: HVAC, Electrical, Plumbing + Carpentry) 10.Computer User Support Specialist 11.EMS → EMT / Emergency Medical Technician 12.Health Coach 13.UX Pathways 14.Cloud Computing 15.Health Information Technology 16.XR Developer 17.Residential Construction 18.Project Management 19.CDL+ 20.Smart Manufacturing Digital Integration 21.Cloud Computing Technologies 22.Routing + Switching 23.CHW 24.Cybersecurity 25.Data Analytics 26.Ethnographies of Work 27.IT User Support Specialist 28.Hospitality Leadership 29.Healthcare Technician",
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 29
+    },
+    "ssn_or_itin_if_available_bs": {
+      "description": "no",
+      "type": "string"
+    },
+    "student_id_if_available_bs": {
+      "description": "no",
+      "type": "string"
+    },
+    "date_of_birth_bs": {
+      "description": "month/date/year (XX/XX/XXXX)",
+      "type": "string",
+      "pattern": "^[0-1]{1}[1-9]{1}/[0-3]{1}[0-9]{1}/[0-9]{4}"
+    },
+    "preferred_phone_number_bs": {
+      "description": "XXX-XXX-XXXX",
+      "type": "string",
+      "pattern": "^[0-9]{3}-[0-9]{3}-[0-9]{4}"
+    },
+    "phone_number_type_bs": {
+      "description": "1. Mobile/cell phone 2. Lane line",
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 2
+    },
+    "texting_option_bs": {
+      "description": "1. Yes 2. No",
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 2
+    },
+    "preferred_email_bs": {
+      "description": "no",
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$"
+    },
+    "gender_bs": {
+      "description": "1. Male 2. Female 3. Non-binary 4. Prefer to self-describe 5. Prefer not to say                                                       6. Other                                          7. Not Listed 8. Prefer not to say                                                      ",
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 8
+    },
+    "gender_self_describe_bs": {
+      "description": "no",
+      "type": "string"
+    },
+    "hispanic_or_latino_bs": {
+      "description": "1. Yes 2. No                                                                    3. Prefer not to say",
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 3
+    },
+    "race_bs_ITCC": {
+      "description": "1. American Indian or Alaska Native 2. Asian 3. Black or African American 4. Native Hawaiian or Other Pacific Islander 5. White 6. Not Listed 7. Prefer Not to Say",
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 7
+    },
+    "race_not_listed_bs_ITCC": {
+      "type": "string"
+    },
+    "parent_or_guardian_bs": {
+      "description": "1. Yes 2. No                                                                    3. Prefer not to say",
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 3
+    },
+    "marital_status_bs": {
+      "description": "1. Currently married 2. Living with an unmarried partner 3. Divorced or separated 4. Widowed 5. Never married 6. Single",
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 6
+    },
+    "military_status_bs": {
+      "description": "1. None 2. Active duty 3. Veteran 4. Reserves/Guard                                  5. Prefer not to say",
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5
+    },
+    "person_with_a_disability_bs": {
+      "description": "1. Yes 2. No                                                                    3. Prefer not to say",
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 3
+    },
+    "english_as_first_language_bs": {
+      "description": "1. Yes 2. No                                                                    3. Prefer not to say",
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 3
+    },
+    "parents_grandparents_coll_bs": {
+      "description": "1. Yes 2. No 3. Unknown                                                4. Prefer not to say",
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 4
+    },
+    "born_outside_the_us_bs": {
+      "description": "1. Yes 2. No                                                                    3. Prefer not to say",
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 3
+    },
+    "highest_level_of_education_bs": {
+      "description": "1. Some high school but no high school diploma/credential 2. High school diploma 3. GED/HiSET/TASC or other high school credential 4. Some college, but no degree 5. Associate degree 6. Bachelor's degree 7. Graduate degree",
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 7
+    },
+    "citizen_status_bs_pgcc": {
+      "description": "1. US Citizen 2. Permanent or Conditional Resident 3. Non-immigrant 4. Un-documented",
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 4
+    },
+    "full_time_part_time_att_bs": {
+      "description": "1. Part-time 2. Full-time",
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 2
+    },
+    "transfer_from_another_coll_bs": {
+      "description": "1. Yes 2. No",
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 2
+    },
+    "occupation_bs": {
+      "description": "1. Management occupations 2. Business and financial occupations 3. Computer and mathematical occupations 4. Architecture and engineering occupations 5. Life, physical, and social science occupations 6. Community and social service occupations 7. Legal occupations 8. Educational instruction and library occupations 9. Arts, design, entertainment, sports, and media occupations 10. Healthcare practitioners and technical occupations 11. Healthcare support occupations 12. Protective service occupations 13. Food preparation and serving related occupations 14. Building and grounds cleaning and maintenance occupations 15. Personal care and service occupations 16. Sales and related occupations 17. Office and administrative support occupations 18. Farming, fishing, and forestry occupations 19. Construction and extraction occupations 20. Installation, maintenance, and repair occupations 21. Production occupations 22. Transportation and material moving occupations 23. Military specific occupations 24. Other",
+      "type": "string",
+      "pattern": "^[0-9]{2}"
+    },
+    "hours_worked_last_week_bs": {
+      "description": "no",
+      "type": "string"
+    },
+    "current_hourly_wage_bs": {
+      "description": "no",
+      "type": "string"
+    },
+    "total_income_bs": {
+      "description": "1. $0 2. $1 to $9,999 3. $10,000 to $19,999 4. $20,000 to $29,999 5. $30,000 to $39,999 6. $40,000 to $49,999 7. $50,000 or over",
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 7
+    },
+    "public_benefits_bs_itcc": {
+      "description": "1. I do not receive any benefits 2. Unemployment benefits 3. Temporary Assistance for Needy Families (TANF)/Cash Assistance 4. Food and nutrition assistance (SNAP, WIC, etc.) 5. SSI or SSDI 6. Other not listed",
+      "type": "string",
+      "pattern": "^[1-6]{1,6}"
+    },
+    "public_benefits_not_listed_bs_itcc": {
+      "type": "string"
+    },
+    "goals_for_mp_text_bs": {
+      "type": "string"
+    },
+    "goals_for_mp_bs_itcc": {
+      "type": "string",
+      "pattern": "^[1-6]{1,6}"
+    },
+    "goals_for_after_bs_itcc": {
+      "description": "1. Continue my education at [this college] 2. Continue my education at another college 3. Find new job 4. Advance or get a promotion at my existing job 5. Increase my earnings 6. Increase my job satisfaction 7. Have more job security 8. Other (please specify)",
+      "type": "string",
+      "pattern": "^[1-8]{1,8}"
+    }
+  },
+  "required": [
+    "first_name_bs",
+    "middle_initial_bs",
+    "last_name_bs",
+    "college_bs",
+    "micro_pathway_program_bs",
+    "ssn_or_itin_if_available_bs",
+    "date_of_birth_bs",
+    "preferred_phone_number_bs",
+    "phone_number_type_bs",
+    "preferred_email_bs"
+  ]
+}

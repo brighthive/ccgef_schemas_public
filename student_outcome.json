@@ -1,0 +1,136 @@
+{
+  "$id": "https://example.com/product.schema.json",
+  "title": "student_outcome",
+  "description": "Student Enrollment Description",
+  "type": "object",
+  "properties": {
+    "learning_program_ctid": {
+      "description": "The CTID for the Learning Program, which will include all courses in the micro-pathway. All Learning Programs published to the Credential Registry have a CTID. The Credential Engine team will provide the Learning Program CTIDs to each college.. Description1:39 characters  The CTID follows a standard format and serves as the primary, unique identifier for all major objects in the Credential Registry.",
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^[a-z|0-9]{2}-[a-z|0-9]{8}-[a-z|0-9]{4}-[a-z|0-9]{4}-[a-z|0-9]{4}-[a-z|0-9]{12}$"
+        },
+        {
+          "enum": ["UK"]
+        }
+      ]
+    },
+    "Micropathway_abbrev": {
+      "description": "Abbreviation to designate the micro-pathway assigned by the college that will be consistently used for all data uploads for that micro-pathway to the Lab. Description1:Alphanumeric up to 6 characters All Caps Can't include spaces, periods, apostrophes, or hyphens",
+      "type": "string",
+      "pattern": "^[A-Z|0-9]{1,6}$"
+    },
+    "institution_id": {
+      "description": "Your institution's OPEID.Format: Currently you can only enter an 8- digit OPEID (6-digit OPEID + 2-digit branch code). If you do not have a branch code, enter your 6-digit OPEID with 00 at the end.",
+      "type": "string",
+      "pattern": "^[0-9]{8}$"
+    },
+    "ssn": {
+      "description": "Student's social security number. For CCGEF, provide both the Student ID and SSN. Format: 9 digits",
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^[0-9]{9}"
+        },
+        {
+          "enum": ["UK"]
+        }
+      ]
+    },
+    "student_id": {
+      "description": "Your institution's ID number for the student. Cannot be the same as SSN or ITIN. Can include: period, apostrophe, hyphen, underscore. For CCGEF, provide both the Student ID and SSN.Format: Alphanumeric 3 - 20 characters",
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 20
+    },
+    "first_name": {
+      "description": "Student's first name.Format: Alphanumeric, up to 60 characters  Can include: space, period, apostrophe, hyphen.",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 60
+    },
+    "middle_name": {
+      "description": "Student's middle name.Format: Alphanumeric, up to 60 characters  Can include: space, period, apostrophe, hyphen.",
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 60
+        },
+        {
+          "enum": ["UK", "NA"]
+        }
+      ]
+    },
+    "last_name": {
+      "description": "Student's last name.Format: Alphanumeric, up to 60 characters  Can include: space, period, apostrophe, hyphen.",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 60
+    },
+    "course_ctid": {
+      "description": "The CTID for the course. All courses published to the Credential Registry have a CTID. The Credential Engine team will provide the course CTIDs to each college.Format: 39 characters  The CTID follows a standard format and serves as the primary, unique identifier for all major objects in the Credential Registry.",
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^[a-z|0-9]{2}-[a-z|0-9]{8}-[a-z|0-9]{4}-[a-z|0-9]{4}-[a-z|0-9]{4}-[a-z|0-9]{12}$"
+        },
+        {
+          "enum": ["UK"]
+        }
+      ]
+    },
+    "grade": {
+      "description": "Student's pass/fail, or other status resulting from the courseFormat: Enter one of the following codes: P = Pass F = Fail I = Incomplete W = Withdraw A = Audit M = Missing O = Other",
+      "enum": ["P", "F", "I", "W", "A", "M", "O"]
+    },
+    "number_of_credits_earn": {
+      "description": "Format: XX.XX  Cannot be greater than Number of Credits Attempted.   Enter 0.0 if course is Non-Credit",
+      "type": "number",
+      "minimum": 0
+    },
+    "credentials_earned": {
+      "description": "Format: Valid values are:  C1 = Less than 1-year certificate, less than an associate's degree C2 = 1-2 year certificate, less than associate's degree A = Associate C4 = 2 - 4 year certificate, less than bachelor's degree BG = Badge (as defined in the Credential Engine type list) MC = Other Microcredential (as defined in the Credential Engine Type list) P = Student has not earned a credential, but is progressing toward a credential N = Student has not earned a credential, and is not progressing toward a credential",
+      "enum": ["C1", "C2", "A", "C4", "BG", "MC", "P", "N"]
+    },
+    "credential_ctid": {
+      "description": "The CTID for the course. All courses published to the Credential Registry have a CTID. The Credential Engine team will provide the course CTIDs to each college.Format: 39 characters  The CTID follows a standard format and serves as the primary, unique identifier for all major objects in the Credential Registry.  Format: ce-11111111-1111-1111-1111-111111111111 32 hexadecimal (base-16) digits, displayed in five groups separated by hyphens, in the form 8-4-4-4-12 for a total of 36 characters prefeaced by ce- for a total of 39 characters.",
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^[a-z|0-9]{2}-[a-z|0-9]{8}-[a-z|0-9]{4}-[a-z|0-9]{4}-[a-z|0-9]{4}-[a-z|0-9]{12}$"
+        },
+        {
+          "enum": ["UK"]
+        }
+      ]
+    },
+    "course_prefix": {
+      "description": "Course prefix as it appears in your institution's catalog Format: For example, ENG 101 Composition I = ENG. Can include: period, hyphen, underscore, ampersand",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 50
+    },
+    "course_number": {
+      "description": "Course number as it appears in your institution's catalog. Format: For example, ENG 101 Composition I = 101. Can include: period, hyphen, underscore, ampersand",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 20
+    }
+  },
+  "required": [
+    "learning_program_ctid",
+    "Micropathway_abbrev",
+    "institution_id",
+    "ssn",
+    "student_id",
+    "first_name",
+    "middle_name",
+    "last_name",
+    "course_ctid",
+    "credential_ctid",
+    "course_prefix",
+    "course_number"
+  ]
+}
