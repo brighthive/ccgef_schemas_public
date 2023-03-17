@@ -1,0 +1,254 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.com/product.schema.json",
+    "title": "Student_Enrollment_Aggregate",
+    "description": "Student Enrollment Aggregate Schema",
+    "type": "object",
+    "properties": {
+        "institution_id": {
+            "description": "Your institution's OPEID. Format: Use an 8- digit OPEID (6-digit OPEID + 2-digit branch code). If you do not have a branch code, enter your 6-digit OPEID with 00 at the end.Use an 8- digit OPEID (6-digit OPEID + 2-digit branch code). If you do not have a branch code, enter your 6-digit OPEID with 00 at the end.",
+            "type": "integer",
+            "minimum": 1000000,
+            "maximum": 99999999
+        },
+        "cohort": {
+            "description": "Academic year in which the student first enrolled in at least one course. Must be 2 consecutive years between 2000 and today Example: 2019-20 Format: Date YYYY-YYDate YYYY-YY",
+            "type": "string",
+            "pattern": "^2[0-9]{3}-[0-9]{2}$"
+        },
+        "cohort_term": {
+            "description": "Term in which student first enrolled in at least one course in the CCGEF Micro-pathway program. Format: Valid codes:  Fall  Winter  Spring  SummerValid codes:  Fall  Winter  Spring  Summer",
+            "enum": [
+                "Fall",
+                "Winter",
+                "Spring",
+                "Summer"
+            ]
+        },
+        "ethnicity": {
+            "description": "Student's ethnicity. Format: Valid codes: H = Hispanic or Latino NH = Not Hispanic or Latino UK = UnknownValid codes: H = Hispanic or Latino N = Not Hispanic or Latino UK = Unknown",
+            "enum": [
+                "H",
+                "UK",
+                "N"
+            ]
+        },
+        "race": {
+            "description": "Student's race. Format: Valid codes: A = Nonresident Alien AI = American Indian or Alaska Native AN = Asian B = Black HP = Native Hawaiian or other Pacific Islander MR = Multiracial (two or more races) W = White HU = Hispanic or Latino race is unknown UK = UnknownValid codes: A = Nonresident Alien  IA= American Indian or Alaska Native AN = Asian B = Black HP = Native Hawaiian or other Pacific Islander W = White UK = Unknown",
+            "enum": [
+                "A",
+                "IA",
+                "AN",
+                "B",
+                "HP",
+                "W",
+                "UK"
+            ]
+        },
+        "veteran_status": {
+            "description": "Student's military status at the time of enrollment. Format: Valid values: 0 = None 1 = Active Duty 2 = Veteran 3 = Reserves/Guard  Use UK for Unknown.Valid values: 0 = None 1 = Active Duty 2 = Veteran 3 = Reserves/Guard  Use UK for Unknown.",
+            "enum": [
+                0.0,
+                1.0,
+                2.0,
+                3.0,
+                "UK"
+            ]
+        },
+        "disability_status": {
+            "description": "Disability status of student with the institution or system. Format: Valid codes: Y = Yes, should the student have a documented record with the disability office as learning, physical, and/or psychological disability. N = No, the student does not identify or have documented/reported disability with the institution or system UK = Unknown.Valid codes: Y = Yes, should the student have a documented record with the disability office as learning, physical, and/or psychological disability. N = No, the student does not identify or have documented/reported disability with the institution or system UK = Unknown.",
+            "enum": [
+                "Y",
+                "N",
+                "UK"
+            ]
+        },
+        "gender": {
+            "description": "Student's gender at the time of enrollment. Format: Valid codes: M = Male F = Female N = Non-binary or Non-gender  P = Prefer to self-describe UK = Unknown Valid codes: M = Male F = Female N = Non-binary or Non-gender  P = Prefer to self-describe UK = Unknown ",
+            "enum": [
+                "M",
+                "F",
+                "N",
+                "P",
+                "UK"
+            ]
+        },
+        "marital_status": {
+            "description": "Student's marital status at the time of enrollment. Format: Valid values and code: 1. Currently Married  2. Divorced, Separated or Widowed 3. Never Married  Use UK for Unknown Valid codes: 1. Currently Married 2. Living with unmarried partner 3. Divorced or separated 4. Widowed 5. Never Married",
+            "enum": [
+                1.0,
+                2.0,
+                3.0,
+                4.0,
+                "5UK"
+            ]
+        },
+        "parenting": {
+            "description": "Student's parental status at the time of enrollment. Format: Valid codes: Y = Yes - currently a parent or guardian to any child under the age of 18 or other dependant living in the home.  N = No - not currently a parent or guardian to any child under the age of 18 or other dependant living in the home.  Use UK for Unknown.Valid codes: Y = Yes - currently a parent or guardian to any child under the age of 18 or other dependant living in the home.  N = No - not currently a parent or guardian to any child under the age of 18 or other dependant living in the home.  Use UK for Unknown.",
+            "enum": [
+                "Y",
+                "N",
+                "UK"
+            ]
+        },
+        "employment_status": {
+            "description": "Student's employment status at the time of enrollment. Format: Valid values and code: 1= Full-time 2=Less than full-time but at least half-time 3=Less than half-time 4=Not employed  Use UK for Unknown.Valid values and code: 1= Full-time 2=Less than full-time but at least half-time 3=Less than half-time 4=Not employed  Use UK for Unknown.",
+            "enum": [
+                1.0,
+                2.0,
+                3.0,
+                4.0,
+                "UK"
+            ]
+        },
+        "first_gen": {
+            "description": "Indicates whether either of the student's parents has completed a certificate or higher credential at a post-secondary institution. Format: Valid values and code: 1 = Neither parent completed college. 2 = At least one parent completed college.  Use UK for Unknown.Use either numeric or alphabetical code values: Numeric: N = Neither parent attended college P = At least one parent attended college but earned no credential or degree C = At least one parent earned a certificate A = At least one parent earned an associate's degree B = At least one parent earned a bachelor's degree or higher ",
+            "enum": [
+                "N",
+                "P",
+                "C",
+                "A",
+                "B",
+                "UK"
+            ]
+        },
+        "dual_summer": {
+            "description": "Student was a previous dual enrollment student and/or enrolled in summer work before their first term enrolled with credential-seeking status Format: Valid codes: DE = Past dual enrollment SE = Past summer enrollment DS = Past dual and summer enrollment N = Neither dual nor summer enrollment UK = UnknownValid codes: DE = Past dual enrollment SE = Past summer enrollment DS = Past dual and summer enrollment UK = Unknown",
+            "enum": [
+                "DE",
+                "SE",
+                "DS",
+                "N",
+                "UK"
+            ]
+        },
+        "enrollment_type": {
+            "description": "Student's cohort enrollment type. Format: Valid codes: F = First time at institution, non-transfer C = Continuing R = Re-admit T = Transfer UK = Uknown  Valid codes: F = First time at institution, non-transfer C = Continuing R = Re-admit T = Transfer UK = Uknown  ",
+            "enum": [
+                "F",
+                "C",
+                "R",
+                "T",
+                "UK"
+            ]
+        },
+        "reading_replacement": {
+            "description": "Student was college ready in Reading upon enrollment based on your institution's Reading placement policies. Format: Valid codes:  C = College ready  N = Not college ready UK = Unknown NA = Not applicable to programValid codes:  C = College ready  N = Not college ready UK = Unknown",
+            "enum": [
+                "C",
+                "N",
+                "UK"
+            ]
+        },
+        "math_placement": {
+            "description": "Student was college ready in math upon enrollment based on the institution's math placement policies. Format: Valid codes: C = College ready N = Not college ready UK = Unknown NA = Not applicable to programValid codes: C = College ready N = Not college ready UK = Unknown NA = Not applicable to program",
+            "enum": [
+                "C",
+                "N",
+                "UK",
+                "NA"
+            ]
+        },
+        "english_placement": {
+            "description": "Student was college ready in English upon enrollment based on the institution's English placement policies. Format: Valid codes: C = College ready N = Not college ready UK = Unknown NA = Not applicable to programValid codes: C = College ready N = Not college ready UK = Unknown NA = Not applicable to program",
+            "enum": [
+                "C",
+                "N",
+                "UK",
+                "NA"
+            ]
+        },
+        "gateway_math_status": {
+            "description": "Whether the student is required to complete a gateway math course at enrollment. Format: You may classify more than one course as a math gateway course.  Valid codes: R = Required N = Not required UK = Unknown NA = Not applicable to programYou may classify more than one course as a math gateway course. If unknown, enter UK. This field is used to populate the Gateway dashboard. If you enter UK in the Gateway Math/English Status fields for all students, the Gateway dashboard will show no data. Valid codes: R = Required N = Not required UK = Unknown",
+            "enum": [
+                "R",
+                "N",
+                "UK"
+            ]
+        },
+        "gateway_english_status": {
+            "description": "Whether the student is required to complete a gateway English course at enrollment. Format: You may classify more than one course as an English gateway course.  Valid codes: R = Required N = Not required UK = Unknown NA = Not applicable to programYou may classify more than one course as a math gateway course. If unknown, enter UK. This field is used to populate the Gateway dashboard. If you enter UK in the Gateway Math/English Status fields for all students, the Gateway dashboard will show no data. Valid codes: R = Required N = Not required UK = Unknown",
+            "enum": [
+                "R",
+                "N",
+                "UK"
+            ]
+        },
+        "current_country": {
+            "description": "Student's current country of residence. Format: See the PDP Appendix 2 for a list of valid country codes.   Use UK for Unknown.See the PDP Appendix 2 for a list of valid country codes.   Use UK for Unknown.",
+            "anyOf": [
+                {
+                    "type": "string",
+                    "pattern": "^[A-Z]{2}"
+                },
+                {
+                    "enum": [
+                        "UK"
+                    ]
+                }
+            ]
+        },
+        "pell_recipent": {
+            "description": "Whether the student received a Pell grant during the term. Format: Valid codes: Y = Yes N = N UK = Unknown, or information cannot be shared by the institution.Valid codes: Y = Yes N = N UK = Unknown, or information cannot be shared by the institution.",
+            "enum": [
+                "Y",
+                "N",
+                "UK"
+            ]
+        },
+        "institutional_grant": {
+            "description": "Numeric up to 5 or 6 digits. If the student did not receive an Other Institutional Grant, enter 0. If not available, enter Missing.Numeric up to 5 or 6 digits. If the student did not receive an Other Institutional Grant, enter 0.   Use UK for Unknown. Use NA for Not Applicable.",
+            "anyOf": [
+                {
+                    "type": "integer",
+                    "minimum": 0
+                },
+                {
+                    "enum": [
+                        "UK",
+                        "Missing"
+                    ]
+                }
+            ]
+        },
+        "ccgef_sponsorship": {
+            "description": "Total amount of CCGEF scholarship funds received by the student Format: Numeric up to 5 or 6 digits. If the student did not receive any CCGEF scholarship, enter 0.  Use NA for Not Applicable.Numeric up to 5 or 6 digits. If the student did not receive any CCGEF scholarship, enter 0.  Use NA for Not Applicable.",
+            "anyOf": [
+                {
+                    "type": "integer",
+                    "minimum": 0
+                },
+                {
+                    "enum": [
+                        "NA"
+                    ]
+                }
+            ]
+        }
+    },
+    "required": [
+        "institution_id",
+        "cohort",
+        "cohort_term",
+        "ethnicity",
+        "race",
+        "veteran_status",
+        "disability_status",
+        "gender",
+        "marital_status",
+        "parenting",
+        "employment_status",
+        "first_gen",
+        "dual_summer",
+        "enrollment_type",
+        "reading_replacement",
+        "math_placement",
+        "english_placement",
+        "gateway_math_status",
+        "gateway_english_status",
+        "current_country",
+        "pell_recipent",
+        "institutional_grant",
+        "ccgef_sponsorship"
+    ]
+}
