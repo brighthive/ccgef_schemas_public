@@ -1,0 +1,51 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.com/product.schema.json",
+    "title": "Student_Outcome_Aggregate",
+    "description": "Student Outcome Aggregate Schema",
+    "type": "object",
+    "properties": {
+        "institution_id": {
+            "description": "Your institution's OPEID. Format: Use an 8- digit OPEID (6-digit OPEID + 2-digit branch code). If you do not have a branch code, enter your 6-digit OPEID with 00 at the end.Use an 8- digit OPEID (6-digit OPEID + 2-digit branch code). If you do not have a branch code, enter your 6-digit OPEID with 00 at the end.",
+            "type": "integer",
+            "minimum": 1000000,
+            "maximum": 99999999
+        },
+        "grade": {
+            "description": "Student's pass/fail, or other status resulting from the courseFormat: Enter one of the following codes: P = Pass F = Fail I = Incomplete W = Withdraw A = Audit M = Missing O = OtherEnter one of the following codes: P = Pass F = Fail I = Incomplete W = Withdraw A = Audit M = Missing O = Other",
+            "enum": [
+                "P",
+                "F",
+                "I",
+                "W",
+                "A",
+                "M",
+                "O"
+            ]
+        },
+        "number_of_credits_earn": {
+            "description": "Format: XX.XX  Cannot be greater than Number of Credits Attempted.   Enter 0.0 if course is Non-CreditXX.XX  Cannot be greater than Number of Credits Attempted.   ",
+            "type": "number",
+            "minimum": 0
+        },
+        "credentials_earned": {
+            "description": "Format: Valid values are:  C1 = Less than 1-year certificate, less than an associate's degree C2 = 1-2 year certificate, less than associate's degree A = Associate C4 = 2 - 4 year certificate, less than bachelor's degree BG = Badge (as defined in the Credential Engine type list) MC = Other Microcredential (as defined in the Credential Engine Type list) P = Student has not earned a credential, but is progressing toward a credential N = Student has not earned a credential, and is not progressing toward a credential",
+            "enum": [
+                "C1",
+                "C2",
+                "A",
+                "C4",
+                "BG",
+                "MC",
+                "P",
+                "N"
+            ]
+        }
+    },
+    "required": [
+        "institution_id",
+        "grade",
+        "number_of_credits_earn",
+        "credentials_earned"
+    ]
+}
